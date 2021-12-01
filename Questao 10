@@ -1,0 +1,23 @@
+; Final 0
+; R = (X+Z)*X + Y
+
+JMP start
+
+	x: DB 3
+	y: DB 24
+	z: DB 4
+
+start:
+	MOV A, [x]
+	MOV B, [z]
+	ADD A,B		; Soma de X+Z
+	MOV C,A		; Guardo valor em C
+	
+	MOV A, [x]
+	MOV B, [y]
+	ADD A,B		; Soma de x+y
+	MOV D,A		; Guardo valor em D
+
+	MUL C*D 	; Multiplicação
+	
+        HLT             ; Stop execution
